@@ -1,0 +1,19 @@
+type Mutation {
+    contactUs(
+        input: ContactusInput!
+    ): ContactusOutput
+    @resolver(class: "\\Lehan\\ContactUsGraphQl\\Model\\Resolver\\ContactUs")
+    @doc(description:"GraphQl for Contact us form")
+}
+
+input ContactusInput {
+    fullname: String
+    email: String
+    telephone: String
+    description: String
+}
+
+type ContactusOutput {
+    message: String
+    status: Boolean
+}
